@@ -4,3 +4,6 @@ core benim evrensel katmanım bütün databaselerde kullanabilirim.bu katman di�
 entity framwork için evrensel kod yazacağız.
 
 dataaccess dosyasında---->bu katmana hizmet edecek kodlar olacak.evrensel kodlar yani
+
+
+utilities ---business katmanındaki iş ile ilgili metotlar yazılacak.results , ioc gibi

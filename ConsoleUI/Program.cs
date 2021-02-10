@@ -51,10 +51,20 @@ namespace ConsoleUI
 
             //Console.WriteLine("----------------------------\n");
 
-            foreach (var product in productManager.GetProductDetails())
+            var result = productManager.GetProductDetails();
+            if (result.Success==true) //==true yazmasakta olurdu defaultta öyle
             {
-                Console.WriteLine(product.ProductName+ " / " + product.CategoryName);
+                foreach (var product in result.Data)
+                {
+                    Console.WriteLine(product.ProductName + " / " + product.CategoryName);
+                }
             }
+            else
+            {
+                Console.WriteLine(result.Message);
+            }
+
+            
         }
     }
 }

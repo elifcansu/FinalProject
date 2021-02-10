@@ -1,0 +1,1 @@
+﻿constants ---sabitler projedeki sabitler olarak kullnacağız
