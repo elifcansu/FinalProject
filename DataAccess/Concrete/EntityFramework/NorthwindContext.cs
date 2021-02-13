@@ -15,7 +15,7 @@ namespace DataAccess.Concrete.EntityFramework
             optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Northwind;Trusted_Connection=true"); //sql servera bağlanmayı gösteriyoruz.
         }//context burada hangi veritabanına bağlandığını buldu.
 
-        //aşağıdaki nesnelerimize karşılık gelen veritabanındaki tabloya bağladık
+        //aşağıdaki nesnelerimize karşılık gelen veritabanındaki tablolara bağladık
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Customer> Customers { get; set; }
