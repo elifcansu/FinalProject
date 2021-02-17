@@ -31,8 +31,8 @@ namespace WebAPI
         {
             //Autofac,Ninject,CastleWindsor,StructureMap,LightInject,DryInject ---->IoC Container
             services.AddControllers();
-            services.AddSingleton<IProductService,ProductManager>(); //ýproductservice görülen yerde product manager referansý ver demek.bu clientlerin 1 milyon instance üretmesini saðlar.
-            services.AddSingleton<IProductDal, EfProductDal>();//biri senden ýproductdal isterse efproductdalý ref ver.
+            //services.AddSingleton<IProductService,ProductManager>(); //ýproductservice görülen yerde product manager referansý ver demek.bu clientlerin 1 milyon instance üretmesini saðlar.
+            //services.AddSingleton<IProductDal, EfProductDal>();//biri senden ýproductdal isterse efproductdalý ref ver.
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

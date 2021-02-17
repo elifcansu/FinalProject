@@ -1,10 +1,14 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
+using Core.CrossCuttingConcerns.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using DataAccess.Concrete.InMemory;
 using Entities.Concrete;
 using Entities.DTOs;
+using FluentValidation;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,16 +23,11 @@ namespace Business.Concrete
         {
             _productDal = productDal;
         }
-
+        //business codes - iş kodları mesela bir kişiye ehliyet verip vermeme gibi olayları iş kodalrında yaparız
+        //validation-doğrulama kodu min karakter sayısı ekranda yazarken altını çizilen olaylar validation.nesnenin yapısı ile ilgili kodlar.
+        [ValidationAspect(typeof(ProductValidator))]
         public IResult Add(Product product)
         {
-            //business codes
-            if (product.ProductName.Length < 2)
-            {
-                //magic strings 
-                return new ErrorResult(Messages.ProductNameInvalid);
-            }
-
             _productDal.Add(product);//dala diyor ki ekle
             return new SuccessResult(Messages.ProductAdded); 
 
