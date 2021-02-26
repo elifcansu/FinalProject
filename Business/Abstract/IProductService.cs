@@ -19,6 +19,7 @@ namespace Business.Abstract
         IDataResult<Product> GetById(int productId); //bunu gerçek haytatta ürün detayına girmek istediğimizde kullanılıyoruz genelde
         IResult Add(Product product); //void yerine ıresult dicem artık
 
+        IResult Update(Product product);
         //restful---->http ---> 
     }
 }

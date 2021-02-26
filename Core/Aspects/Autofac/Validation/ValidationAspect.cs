@@ -9,7 +9,7 @@ using System.Text;
 
 namespace Core.Aspects.Autofac.Validation
 {
-    public class ValidationAspect : MethodInterception
+    public class ValidationAspect : MethodInterception //aspect metodun başında veya sonunda veya istediğin zaman çalışmasını istediğin method onbefore diyerek başında çalışmasını istedik.onexception deseydik hata verdiğinde çalışsın deriz.validator doğrulama oldugundan methodun başında yaparız doğrulamasını istiyoruz çünkü
     {
         private Type _validatorType;
         public ValidationAspect(Type validatorType)
