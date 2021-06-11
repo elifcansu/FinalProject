@@ -41,7 +41,7 @@ namespace Business.Concrete
         {
             //bir kategoride en fazla 10 ürün olabilir.
             //aynı isimde ürün eklenemez.
-            //eğer mevcut kategori sayısı 15 i geçtiyse sisteme yeni ürün eklenemez
+            //eğer mevcut kategori sayısı 15 i geçtiyse sisteme yeni ürün eklenemez tests
             
            IResult result= BusinessRules.Run(CheckIfProductNameExists(product.ProductName), CheckIfProductCountOfCategoryCorrect(product.CategoryId),CheckIfCategoryLimitExceded());
 
