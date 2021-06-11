@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.BusinessAspects.Autofac;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Validation;
@@ -33,7 +34,8 @@ namespace Business.Concrete
         //business codes - iş kodları mesela bir kişiye ehliyet verip vermeme gibi olayları iş kodalrında yaparız
         //validation-doğrulama kodu min karakter sayısı ekranda yazarken altını çizilen olaylar validation.nesnenin yapısı ile ilgili kodlar.
 
-
+        //Claim ---> iddda etmek demek aşağıdaki , ile ayılmış şeyler claim 
+        [SecuredOperation("product.add,admin")]  //bu arkadaşın product add yetkisine sahip oldugun söyler veya admin olması gerektiğini söyler
         [ValidationAspect(typeof(ProductValidator))]
         public IResult Add(Product product)
         {
